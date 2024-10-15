@@ -3,7 +3,7 @@ public class Birth {
     public double? Age { get; set; }
     public bool IsValid()
     {
-        return Name != null && Age != null && Age > 0;
+        return Name != null && Age != null && Age > 0 && Age < DateTime.Now.Year;
     }
 
     public int Calculate()
