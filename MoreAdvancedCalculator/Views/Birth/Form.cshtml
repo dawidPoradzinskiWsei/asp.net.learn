@@ -1,0 +1,25 @@
+@{
+    ViewBag.Title = "Imie nazwisko";
+    Layout = "_layout";
+}
+
+<div class="container">
+    <div class="row justify-content-md-center">
+    <div class="col-6">
+            <h2>Imie i nazwisko!</h2>
+        <form action="Result" method="POST">
+            <div class="mb-3">
+                <label class="form-label" for="name">Imie</label>
+                <input class="form-control" type="text" name="name" id="name"/>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="age">Rok urodzenia</label>
+                <input class="form-control" type="number" min="1" name="age" id="age"/>
+            </div>
+            
+            <div class="mb-3">
+                <button class="btn btn-primary" type="submit">Oblicz</button>
+            </div>
+        </form>
+    </div>
+</div>

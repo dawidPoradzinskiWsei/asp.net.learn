@@ -18,6 +18,22 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\Users\dawid.poradzinski\Desktop\asp_net_learn\MoreAdvancedCalculator
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/Users/dawid.poradzinski/Desktop/asp_net_learn/MoreAdvancedCalculator/Views/Birth/Form.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmlydGhcRm9ybS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Users/dawid.poradzinski/Desktop/asp_net_learn/MoreAdvancedCalculator/Views/Birth/Result.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmlydGhcUmVzdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Users/dawid.poradzinski/Desktop/asp_net_learn/MoreAdvancedCalculator/Views/Calculator/Form.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FsY3VsYXRvclxGb3JtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Users/dawid.poradzinski/Desktop/asp_net_learn/MoreAdvancedCalculator/Views/Calculator/Result.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FsY3VsYXRvclxSZXN1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Users/dawid.poradzinski/Desktop/asp_net_learn/MoreAdvancedCalculator/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
