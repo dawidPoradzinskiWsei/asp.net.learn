@@ -8,6 +8,6 @@ public class Birth {
 
     public int Calculate()
     {
-        return (int) (2024 - Age);
+        return (int) (DateTime.Now.Year - Age);
     }
 }
