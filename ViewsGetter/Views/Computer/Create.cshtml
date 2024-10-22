@@ -1,0 +1,66 @@
+@model Computer
+@{
+    ViewBag.Title = "Calculator Form";
+    Layout = "_layout";
+}
+
+<form asp-action="Create" asp-controller="Computer" method="POST">
+
+    @* <div asp-validation-summary="All"></div> *@
+
+
+    <div>
+       <label asp-for="name">PC name</label>
+    <div>
+    <div>
+        <input class="form-control" type="text" asp-for="name"/>
+    </div>
+
+
+    <div>
+       <label asp-for="processor">Procesor</label>
+    <div>
+
+    <span asp-validation-for="processor" class="text-danger"></span>
+
+    <div>
+        <input class="form-control" type="text" asp-for="processor"/>
+    </div>
+
+
+    <div>
+       <label asp-for="ramGB">GB RAM</label>
+    <div>
+
+    <span asp-validation-for="ramGB" class="text-danger"></span>
+
+    <div>
+        <input class="form-control" type="number" asp-for="ramGB"/>
+    </div>
+    
+    <div>
+       <label asp-for="gpu">GPU</label>
+    <div>
+    <div>
+        <input class="form-control" type="text" asp-for="gpu"/>
+    </div>
+
+    <div>
+       <label asp-for="producer">Producer</label>
+    <div>
+    <div>
+        <input class="form-control" type="text" asp-for="producer"/>
+    </div>
+
+    <div>
+       <label asp-for="yearOfProduction">Year of production</label>
+    <div>
+    <div>
+        <input class="form-control" type="date" asp-for="yearOfProduction"/>
+    </div>
+
+    
+
+ 
+<button type="submit">Zapisz</button>
+</form>
