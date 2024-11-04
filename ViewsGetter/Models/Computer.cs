@@ -3,20 +3,29 @@ using Microsoft.AspNetCore.Mvc;
 
 public class Computer {
     [HiddenInput]
-    public int id {get;set;}
-    public string name {get;set;}
+    public int Id {get;set;}
+    [Display(Name = "Nazwa")]
+    public string Name {get;set;}
 
     [RegularExpression("[i][3579]-[1][0-9]{4}")]
     [Required(ErrorMessage = "Please, tell me about your intel proccesor: i5-12400")]
-    public string processor {get;set;}
+    [Display(Name = "Procesor")]
+    public string Processor {get;set;}
 
     [Required(ErrorMessage = "Please, add some ram")]
-    public int ramGB {get;set;}
+    [Display(Name = "Pamięć RAM")]
+    public int RamGB {get;set;}
     [Required(ErrorMessage = "Please, check gpu")]
-    public string gpu {get;set;}
+    [Display(Name = "Karta Graficzna")]
+    public string Gpu {get;set;}
     [Required(ErrorMessage = "Please, check producer")]
-    public string producer {get;set;}
+    [Display(Name = "Producent")]
+    public string Producer {get;set;}
 
     [DataType(DataType.Date)]
-    public DateTime yearOfProduction {get;set;}
+    [Display(Name = "Rok produkcji")]
+    public DateTime YearOfProduction {get;set;}
+
+    [Display(Name = "Kategoria")]
+    public Category Category {get;set;}
 }

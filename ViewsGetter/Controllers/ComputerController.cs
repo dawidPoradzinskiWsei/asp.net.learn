@@ -2,11 +2,15 @@ using Microsoft.AspNetCore.Mvc;
 
 public class ComputerController : Controller{
 
-    static Dictionary<int, Computer> _computers = new();
+    private readonly IComputerService _computerService;
+
+    public ComputerController(IComputerService computerService) {
+        _computerService = computerService;
+    }
 
 
     public IActionResult Index() {
-        return View(_computers);
+        return View(_computerService.GetAll());
     }
 
     [HttpGet]
@@ -14,33 +18,41 @@ public class ComputerController : Controller{
         return View();
     }
 
+    public ActionResult Details(int id) {
+        return View(_computerService.GetById(id));
+    }
+
 
     [HttpPost]
     public IActionResult Create(Computer model) { 
         if (ModelState.IsValid)
         {
-            int id = _computers.Keys.Count != 0 ? _computers.Keys.Max() : 0;
-            model.id = id + 1;
-            _computers.Add(model.id, model);
-
-            return RedirectToAction("Index");
+            _computerService.Add(model);
+            return RedirectToAction(nameof(Index));
         } else {
-            return View(model);
+            return View();
         }
     }
 
 
     [HttpGet]
-    public String Edit(int? id)
+    public ActionResult Edit(int id)
     {
-        return "Edycja " + id;
+        return View(_computerService.GetById(id));
     }
 
-    [HttpGet]
-    public IActionResult Delete(int? id) {
-        _computers.Remove((int)id);
-        return RedirectToAction("Index");
+    [HttpPost]
+    public ActionResult Edit(Computer model) {
+        if(!ModelState.IsValid) {
+            return View();
+        }
+        _computerService.Update(model);
+        return RedirectToAction(nameof(Index));
     }
 
+    public ActionResult Delete(int id, Computer model) {
+        _computerService.Delete(id);
+        return RedirectToAction(nameof(Index));
+    }
 
 }

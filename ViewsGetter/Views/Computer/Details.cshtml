@@ -1,0 +1,20 @@
+@model Computer
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";}
+    <div class="card">
+        <div class="card-header">
+            Szczegóły
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">@Model.Name @Model.Producer</h5>
+                </div>  
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">CPU: @Model.Processor</li>
+                    <li class="list-group-item">GPU: @Model.Gpu</li>
+                    <li class="list-group-item">RAM: @Model.RamGB</li>
+                    <li class="list-group-item">Category: @Model.Category</li>
+                    <li class="list-group-item">Year of production: @Model.YearOfProduction</li>
+                    </ul>
+                    <div class="card-body">
+                        <a class="btn btn-primary" asp-action="Index" class="card-link">Powrót do listy</a>    </div></div>     
