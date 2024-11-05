@@ -1,6 +1,7 @@
 
 using AspNetCoreGeneratedDocument;
 
+//BEZ BAZY
 class MemoryComputerService : IComputerService
 {
     static Dictionary<int, Computer> _computers = new();

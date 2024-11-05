@@ -9,55 +9,55 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ViewsGetter
 build_property.RootNamespace = ViewsGetter
-build_property.ProjectDir = A:\programowanie\Studia\ner\ViewsGetter\
+build_property.ProjectDir = D:\Users\dawid.poradzinski\Desktop\asp_net_learn\ViewsGetter\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = A:\programowanie\Studia\ner\ViewsGetter
+build_property.MSBuildProjectDirectory = D:\Users\dawid.poradzinski\Desktop\asp_net_learn\ViewsGetter
 build_property._RazorSourceGeneratorDebug = 
 
-[A:/programowanie/Studia/ner/ViewsGetter/Views/Computer/Create.cshtml]
+[D:/Users/dawid.poradzinski/Desktop/asp_net_learn/ViewsGetter/Views/Computer/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcHV0ZXJcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[A:/programowanie/Studia/ner/ViewsGetter/Views/Computer/Details.cshtml]
+[D:/Users/dawid.poradzinski/Desktop/asp_net_learn/ViewsGetter/Views/Computer/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcHV0ZXJcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[A:/programowanie/Studia/ner/ViewsGetter/Views/Computer/Edit.cshtml]
+[D:/Users/dawid.poradzinski/Desktop/asp_net_learn/ViewsGetter/Views/Computer/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcHV0ZXJcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[A:/programowanie/Studia/ner/ViewsGetter/Views/Computer/Index.cshtml]
+[D:/Users/dawid.poradzinski/Desktop/asp_net_learn/ViewsGetter/Views/Computer/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcHV0ZXJcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[A:/programowanie/Studia/ner/ViewsGetter/Views/Home/Index.cshtml]
+[D:/Users/dawid.poradzinski/Desktop/asp_net_learn/ViewsGetter/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[A:/programowanie/Studia/ner/ViewsGetter/Views/Home/Privacy.cshtml]
+[D:/Users/dawid.poradzinski/Desktop/asp_net_learn/ViewsGetter/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[A:/programowanie/Studia/ner/ViewsGetter/Views/Shared/Error.cshtml]
+[D:/Users/dawid.poradzinski/Desktop/asp_net_learn/ViewsGetter/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[A:/programowanie/Studia/ner/ViewsGetter/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/Users/dawid.poradzinski/Desktop/asp_net_learn/ViewsGetter/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[A:/programowanie/Studia/ner/ViewsGetter/Views/_ViewImports.cshtml]
+[D:/Users/dawid.poradzinski/Desktop/asp_net_learn/ViewsGetter/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[A:/programowanie/Studia/ner/ViewsGetter/Views/_ViewStart.cshtml]
+[D:/Users/dawid.poradzinski/Desktop/asp_net_learn/ViewsGetter/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[A:/programowanie/Studia/ner/ViewsGetter/Views/Shared/_Layout.cshtml]
+[D:/Users/dawid.poradzinski/Desktop/asp_net_learn/ViewsGetter/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-k1klb7tjme

@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "A:\\programowanie\\Studia\\ner\\ViewsGetter\\ViewsGetter.csproj": {}
+    "D:\\Users\\dawid.poradzinski\\Desktop\\asp_net_learn\\ViewsGetter\\ViewsGetter.csproj": {}
   },
   "projects": {
-    "A:\\programowanie\\Studia\\ner\\ViewsGetter\\ViewsGetter.csproj": {
+    "D:\\Users\\dawid.poradzinski\\Desktop\\asp_net_learn\\ViewsGetter\\ViewsGetter.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "A:\\programowanie\\Studia\\ner\\ViewsGetter\\ViewsGetter.csproj",
+        "projectUniqueName": "D:\\Users\\dawid.poradzinski\\Desktop\\asp_net_learn\\ViewsGetter\\ViewsGetter.csproj",
         "projectName": "ViewsGetter",
-        "projectPath": "A:\\programowanie\\Studia\\ner\\ViewsGetter\\ViewsGetter.csproj",
-        "packagesPath": "C:\\Users\\Dawid\\.nuget\\packages\\",
-        "outputPath": "A:\\programowanie\\Studia\\ner\\ViewsGetter\\obj\\",
+        "projectPath": "D:\\Users\\dawid.poradzinski\\Desktop\\asp_net_learn\\ViewsGetter\\ViewsGetter.csproj",
+        "packagesPath": "D:\\Users\\dawid.poradzinski\\.nuget\\packages\\",
+        "outputPath": "D:\\Users\\dawid.poradzinski\\Desktop\\asp_net_learn\\ViewsGetter\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Dawid\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "D:\\Users\\dawid.poradzinski\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,6 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -48,6 +45,22 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[8.0.10, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -67,7 +80,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
