@@ -1,4 +1,6 @@
+using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 public class ComputerController : Controller{
 
@@ -15,7 +17,14 @@ public class ComputerController : Controller{
 
     [HttpGet]
     public IActionResult Create() {
-        return View();
+
+        Computer model = new Computer();
+        string name = _computerService.GetOrganizations().ToString();
+        Debug.WriteLine(name);
+        model.Organizations = _computerService.GetOrganizations().Select(e => new SelectListItem(){Text = e.Name, Value = e.Id.ToString()}).ToList();
+
+
+        return View(model);
     }
 
     public ActionResult Details(int id) {

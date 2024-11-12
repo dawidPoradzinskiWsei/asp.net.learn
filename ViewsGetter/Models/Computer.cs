@@ -1,5 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 public class Computer {
     [HiddenInput]
@@ -28,4 +30,14 @@ public class Computer {
 
     [Display(Name = "Kategoria")]
     public Category Category {get;set;}
+
+    [HiddenInput]
+    
+    [Display(Name = "OrganizacjaID")]
+    public int OrganizationId {get;set;}
+
+    public OrganzationEntity? Organization {get;set;}
+
+    [ValidateNever]
+    public List<SelectListItem> Organizations {get;set;}
 }

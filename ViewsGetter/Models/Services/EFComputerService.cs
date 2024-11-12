@@ -30,9 +30,14 @@ public class EFComputerService : IComputerService
         var entity = _context.Computers.Find(id);
         return entity == null ? null : ComputerMapper.FromEntity(entity);
     }
-
+    
     public void Update(Computer model)
     {
         _context.Computers.Update(ComputerMapper.ToEntity(model));
+    }
+
+    public List<OrganzationEntity> GetOrganizations()
+    {
+        return [.. _context.Organizations];
     }
 }

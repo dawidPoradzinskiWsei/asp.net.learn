@@ -1,0 +1,15 @@
+public class OrganzationEntity
+{
+    public int Id {get;set;}
+    public string Name {get;set;}
+    public string NIP {get;set;}
+    public string REGON {get;set;}
+    public Address Address{get;set;}
+    public ISet<ComputerEntity> Computer {get;set;}
+}
+
+public class Address
+{
+    public string City {get;set;}
+    public string Street {get;set;}
+}

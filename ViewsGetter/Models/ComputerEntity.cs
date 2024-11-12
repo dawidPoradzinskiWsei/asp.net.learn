@@ -26,4 +26,7 @@ public class ComputerEntity
     public Category Category {get;set;}
 
     public DateTime Created {get;set;}
+
+    public int OrganzationId {get;set;}
+    public OrganzationEntity? Organzation {get;set;}
 }

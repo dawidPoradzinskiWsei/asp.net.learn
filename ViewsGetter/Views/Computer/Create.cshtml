@@ -65,8 +65,13 @@
          <span asp-validation-for="Category" class="text-danger"></span>
      </div>
      <select class="form-control" asp-for="Category" asp-items="@Html.GetEnumSelectList<Category>()"></select>
-</div>
+    </div>
 
+    <div class="mb-3">
+        <label class="form-label" asp-for="OrganizationId"></label>
+        <select class="form-select" asp-for="OrganizationId" aps-asp-items="@Model.Organizations"></select>
+        <span class="text-danger" asp-asp-validation-for="OrganizationId"></span>
+    </div>
     
 
  

@@ -12,6 +12,8 @@ public class ComputerMapper
             Producer = arg.Producer,
             RamGB = arg.RamGB,
             YearOfProduction = arg.YearOfProduction,
+            Organzation = arg.Organization,
+            OrganzationId = arg.OrganizationId
         };
     }
 
@@ -27,6 +29,8 @@ public class ComputerMapper
             Producer = arg.Producer,
             RamGB = arg.RamGB,
             YearOfProduction = arg.YearOfProduction,
+            Organization = arg.Organzation,
+            OrganizationId = arg.OrganzationId
         };
     }
 }

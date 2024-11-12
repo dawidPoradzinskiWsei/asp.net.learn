@@ -6,4 +6,6 @@ public interface IComputerService {
     List<Computer> GetAll();
 
     Computer? GetById(int id);
+
+    List<OrganzationEntity> GetOrganizations();
 }

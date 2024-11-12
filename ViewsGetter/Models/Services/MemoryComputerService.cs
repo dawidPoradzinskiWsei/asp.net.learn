@@ -27,6 +27,11 @@ class MemoryComputerService : IComputerService
         return _computers[id];
     }
 
+    public List<OrganzationEntity> GetOrganizations()
+    {
+        throw new NotImplementedException();
+    }
+
     public void Update(Computer model)
     {
         if(_computers.ContainsKey(model.Id)) {
