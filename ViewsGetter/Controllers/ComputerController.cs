@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
@@ -27,6 +28,7 @@ public class ComputerController : Controller{
         return View(model);
     }
 
+    [Authorize(Roles = "admin")]
     public ActionResult Details(int id) {
         return View(_computerService.GetById(id));
     }
