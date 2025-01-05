@@ -1,8 +1,178 @@
-﻿@{
+﻿@using MoviesDP.Models.Movies
+@model PagingListAsync<Movie>
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="text-center d-flex flex-column container mx-auto">
+    
+
+        <h1 class="m-2 mb-3" style="color: #f9fafb;">Movies List</h1>
+        <div class="row row-cols-1 py-2" style="background-color: #374151; border-radius: 8px;">
+            
+            @{
+                int i = 1;
+            }
+            
+                <div class="col" style="padding: 0 16px;">
+                    <div class="py-2 px-3 row" style="background-color: #374151; border-radius: 8px; color: white;">
+                        <div class="col d-flex align-items-center justify-content-start" >
+                            <h4 class="w-fit m-0">Id Title</h4>
+                        </div>
+                        <div class="col d-flex align-items-center justify-content-center"  style="font-weight: 500;">
+                            Budget
+                        </div>
+                        <div class="col d-flex align-items-center justify-content-center"  style="font-weight: 500;">
+                            Release Date
+                        </div>
+                        <div class="col d-flex align-items-center justify-content-center">
+                            <div>
+                                Movie Homepage
+                            </div>
+                        </div>
+                        <div class="col align-self-center">
+                            Details
+                        </div>
+                    </div>
+                </div>
+
+            @await foreach (var movie in Model.Data)
+            {
+                <div class="col px-4 py-2">
+                    <div class="py-3 px-2 row shadow" style="background-color: #1f2937; border-radius: 8px; color: white;">
+                        <div class="col d-flex align-items-center justify-content-start text-start" >
+                            <h4 class="w-fit m-0">#@movie.MovieId
+                                 @if(!string.IsNullOrEmpty(movie.Title))
+                                 {
+                                    @movie.Title
+                                 }
+                                 else
+                                 {
+                                    <span>Brak</span>
+                                 }
+                            </h4>
+                        </div>
+                        <div class="col d-flex align-items-center justify-content-center"  style="font-weight: 500;">
+                            @if(movie.Budget == 0)
+                            {
+                                <span>Brak</span>
+                            }
+                            else
+                            {
+                                <span>$@movie.Budget</span>
+                            }
+                        </div>
+                        <div class="col d-flex align-items-center justify-content-center"  style="font-weight: 500;">
+                            @if(@movie.ReleaseDate == null)
+                            {
+                                <span>Brak</span>
+                            }
+                            else
+                            {
+                                <span>@movie.ReleaseDate</span>
+                            }
+                        </div>
+                        <div class="col d-flex align-items-center justify-content-center">
+                            <div>
+                                @if(movie.Homepage == null)
+                                {
+                                    <span>Brak</span>
+                                }
+                                else
+                                {
+                                    <a href="@movie.Homepage" target="_blank" style="color: #f9fafb;">website</a>
+                                }
+                            </div>
+                        </div>
+                        <div class="col align-self-center">
+                            <a asp-controller="Home" asp-action="Details" asp-route-id="@movie.MovieId">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-primary-circle" viewBox="0 0 16 16">
+                                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                                    <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                i++;
+            }
+        </div>
+    
+    <nav aria-label="Books page navigation"> 
+    <ul class="pagination justify-content-center mt-4"> 
+        @if (Model.IsPrevious) 
+        { 
+            <li class="px-1 d-flex align-items-center justify-content-center ">
+                <a class="px-2 text-decoration-none"
+                   asp-controller="Home" 
+                   asp-action="Index" 
+                   asp-route-page="1" 
+                   asp-route-size="@Model.Size">
+                    &lt;&lt;
+                </a>
+            </li>
+            <li class="px-1 d-flex align-items-center justify-content-center ">
+                <a class="px-2 text-decoration-none"
+                   asp-controller="Home" 
+                   asp-action="Index" 
+                   asp-route-page="@(Model.Page - 1)" 
+                   asp-route-size="@Model.Size">
+                    &lt;
+                </a>
+            </li>
+        } 
+
+        @for(int j = Model.Page - 5; j <= Model.Page + 5; j++) 
+        { 
+            if (j > 0 && j <= Model.TotalPages) 
+            { 
+                if (j == Model.Page) 
+                { 
+                    <li class="px-1 d-flex align-items-center justify-content-center ">
+                        <a class="px-2 text-decoration-none" style="color:#e2e8f0">@j</a>
+                    </li>
+                } 
+                else 
+                { 
+                    <li class="px-1 d-flex align-items-center justify-content-center ">
+                        <a class="px-2 text-decoration-none"
+                           asp-controller="Home" 
+                           asp-action="Index" 
+                           asp-route-page="@j" 
+                           asp-route-size="@Model.Size">
+                            @j
+                        </a>
+                    </li>
+                } 
+            } 
+        }
+
+
+        @if (Model.IsNext) 
+        { 
+            <li class="px-1 d-flex align-items-center justify-content-center ">
+                <a class="px-2 text-decoration-none"
+                   asp-controller="Home" 
+                   asp-action="Index" 
+                   asp-route-page="@(Model.Page + 1)" 
+                   asp-route-size="@Model.Size">
+                    &gt;
+                </a>
+            </li>
+            <li class="px-1 d-flex align-items-center justify-content-center ">
+                <a class="px-2 text-decoration-none"
+                   asp-controller="Home" 
+                   asp-action="Index" 
+                   asp-route-page="@Model.TotalPages" 
+                   asp-route-size="@Model.Size">
+                    &gt;&gt;
+                </a>
+            </li>
+        } 
+
+    </ul>
+</nav>
+
 </div>
