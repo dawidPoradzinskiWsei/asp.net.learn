@@ -1,0 +1,79 @@
+@model dynamic
+
+<nav aria-label="Movie Casts page navigation">
+    <ul class="pagination justify-content-center m-0">
+        @if (Model.IsPrevious)
+        {
+            <li class="px-1 d-flex align-items-center justify-content-center ">
+                <a class="px-2 text-decoration-none"
+                   asp-controller="@ViewBag.Controller"
+                   asp-action="@ViewBag.Action"
+                   asp-route-id="@ViewBag.MovieId"
+                   asp-route-page="@(Model.Page - 1)"
+                   asp-route-size="@Model.Size">
+                    &lt;
+                </a>
+            </li>
+            <li class="px-1 d-flex align-items-center justify-content-center ">
+                <a class="px-2 text-decoration-none"
+                   asp-controller="@ViewBag.Controller"
+                   asp-action="@ViewBag.Action"
+                   asp-route-id="@ViewBag.MovieId"
+                   asp-route-page="1"
+                   asp-route-size="@Model.Size">
+                    &lt;&lt;
+                </a>
+            </li>
+        }
+
+        @for (int j = Model.Page - 5; j <= Model.Page + 5; j++)
+        {
+            if (j > 0 && j <= Model.TotalPages)
+            {
+                if (j == Model.Page)
+                {
+                    <li class="px-1 d-flex align-items-center justify-content-center ">
+                        <a class="px-2 text-decoration-none" style="color:#e2e8f0">@j</a>
+                    </li>
+                }
+                else
+                {
+                    <li class="px-1 d-flex align-items-center justify-content-center ">
+                        <a class="px-2 text-decoration-none"
+                            asp-controller="@ViewBag.Controller"
+                            asp-action="@ViewBag.Action"
+                            asp-route-id="@ViewBag.MovieId"
+                            asp-route-page="@j"
+                            asp-route-size="@Model.Size">
+                            @j
+                        </a>
+                    </li>
+                }
+            }
+        }
+
+        @if (Model.IsNext)
+        {
+            <li class="px-1 d-flex align-items-center justify-content-center ">
+                <a class="px-2 text-decoration-none"
+                   asp-controller="@ViewBag.Controller"
+                   asp-action="@ViewBag.Action"
+                   asp-route-id="@ViewBag.MovieId"
+                   asp-route-page="@(Model.Page + 1)"
+                   asp-route-size="@Model.Size">
+                    &gt;
+                </a>
+            </li>
+            <li class="px-1 d-flex align-items-center justify-content-center ">
+                <a class="px-2 text-decoration-none"
+                   asp-controller="@ViewBag.Controller"
+                   asp-action="@ViewBag.Action"
+                   asp-route-id="@ViewBag.MovieId"
+                   asp-route-page="@Model.TotalPages"
+                   asp-route-size="@Model.Size">
+                    &gt;&gt;
+                </a>
+            </li>
+        }
+    </ul>
+</nav>

@@ -2,7 +2,9 @@
 @model PagingListAsync<Movie>
 
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Movies List";
+    ViewBag.Controller = "Home";
+    ViewBag.Action = "Index";
 }
 
 <div class="text-center d-flex flex-column container mx-auto">
@@ -100,79 +102,8 @@
             }
         </div>
     
-    <nav aria-label="Books page navigation"> 
-    <ul class="pagination justify-content-center mt-4"> 
-        @if (Model.IsPrevious) 
-        { 
-            <li class="px-1 d-flex align-items-center justify-content-center ">
-                <a class="px-2 text-decoration-none"
-                   asp-controller="Home" 
-                   asp-action="Index" 
-                   asp-route-page="1" 
-                   asp-route-size="@Model.Size">
-                    &lt;&lt;
-                </a>
-            </li>
-            <li class="px-1 d-flex align-items-center justify-content-center ">
-                <a class="px-2 text-decoration-none"
-                   asp-controller="Home" 
-                   asp-action="Index" 
-                   asp-route-page="@(Model.Page - 1)" 
-                   asp-route-size="@Model.Size">
-                    &lt;
-                </a>
-            </li>
-        } 
-
-        @for(int j = Model.Page - 5; j <= Model.Page + 5; j++) 
-        { 
-            if (j > 0 && j <= Model.TotalPages) 
-            { 
-                if (j == Model.Page) 
-                { 
-                    <li class="px-1 d-flex align-items-center justify-content-center ">
-                        <a class="px-2 text-decoration-none" style="color:#e2e8f0">@j</a>
-                    </li>
-                } 
-                else 
-                { 
-                    <li class="px-1 d-flex align-items-center justify-content-center ">
-                        <a class="px-2 text-decoration-none"
-                           asp-controller="Home" 
-                           asp-action="Index" 
-                           asp-route-page="@j" 
-                           asp-route-size="@Model.Size">
-                            @j
-                        </a>
-                    </li>
-                } 
-            } 
-        }
-
-
-        @if (Model.IsNext) 
-        { 
-            <li class="px-1 d-flex align-items-center justify-content-center ">
-                <a class="px-2 text-decoration-none"
-                   asp-controller="Home" 
-                   asp-action="Index" 
-                   asp-route-page="@(Model.Page + 1)" 
-                   asp-route-size="@Model.Size">
-                    &gt;
-                </a>
-            </li>
-            <li class="px-1 d-flex align-items-center justify-content-center ">
-                <a class="px-2 text-decoration-none"
-                   asp-controller="Home" 
-                   asp-action="Index" 
-                   asp-route-page="@Model.TotalPages" 
-                   asp-route-size="@Model.Size">
-                    &gt;&gt;
-                </a>
-            </li>
-        } 
-
-    </ul>
-</nav>
+        <div class="mt-3">
+            @await Html.PartialAsync("_Pagination", Model);
+        </div>
 
 </div>
