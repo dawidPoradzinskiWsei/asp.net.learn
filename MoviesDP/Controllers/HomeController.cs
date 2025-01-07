@@ -29,7 +29,7 @@ public class HomeController : Controller
         return View(_movieServices.GetMoviesByPages(page, size));
     }
 
-    public IActionResult Details(int id, int page = 1, int size = 20)
+    public IActionResult Details(int id, int page = 1, int size = 9)
     {
         var movie = _movieServices.GetMovie(id);
 

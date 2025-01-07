@@ -5,17 +5,85 @@
 }
 
 <div class="container mx-auto">
-    <h1 class="my-4" style="color: #f9fafb;">Movie #@Model.Movie.MovieId Details</h1>
     <div class="p-2" style="background-color: #374151; border-radius: 8px;">
-        <div class="shadow mx-auto w-25 px-4 py-3 text-center" style="background-color: #1f2937; border-radius: 8px; color: white;">
+
+        <div class="shadow mx-auto py-3 text-center" style="background-color: #1f2937; border-radius: 8px; color: white;">
             @if(!string.IsNullOrEmpty(Model.Movie.Title))
             {
-                <h4>@Model.Movie.Title</h4>
+                <h4 class="m-0">@Model.Movie.Title</h4>
             }
             else
             {
-                <h4>Title: Brak</h4>
+                <h4 class="m-0">Title: Brak</h4>
             }
+        </div>
+
+        <div class="row w-100 mx-auto gap-3 py-3">
+
+            <div class="d-flex flex-column gap-3 p-0 col-9">
+                <div class="shadow mx-auto text-center p-3" style="background-color: #1f2937; border-radius: 8px; color: white;">
+                    <p class="p-2" style="background-color: #374151; border-radius: 4px;">
+                        Tagline: @if(!string.IsNullOrEmpty(Model.Movie.Tagline)) { <b>@Model.Movie.Tagline</b> } else { <b>Brak</b> }
+                    </p>
+                    <p class="p-2 w-100 m-0" style="background-color: #374151; border-radius: 4px;">
+                        Overview: @if(!string.IsNullOrEmpty(Model.Movie.Overview)) { <b>@Model.Movie.Overview</b> } else { <b>Brak</b> }
+                    </p>
+                </div>
+                <div class="placeholder h-100" style="background-color: #1f2937; border-radius: 8px; color: white;">
+                    @await foreach (var cast in Model.MovieCasts.Data)
+                    {
+                        <div class="shadow mx-auto text-center" style="background-color: #1f2937; border-radius: 8px; color: white;">
+                            <p class="p-2 m-3" style="background-color: #374151; border-radius: 4px;">
+                                Character: @if(!string.IsNullOrEmpty(cast.CharacterName)) { <b>@cast.CharacterName</b> } else { <b>Brak</b> }
+                            </p>
+                        </div>
+                    }
+                </div>
+            </div>
+
+            <div class="col d-flex flex-column gap-3 p-0 ">
+
+                <div class="shadow w-100 mx-auto text-center col-1 p-4" style="background-color: #1f2937; border-radius: 8px; color: white;">
+                    <p class="p-2 text-center" style="background-color: #374151; border-radius: 4px;">
+                        Status: <b>@Model.Movie.MovieStatus</b>
+                    </p>
+                    <p class="p-2 text-center m-0" style="background-color: #374151; border-radius: 4px;">
+                        Release Date: @if(Model.Movie.ReleaseDate == null) { <b>Brak</b> } else { <b>@Model.Movie.ReleaseDate</b> }
+                    </p>
+
+                </div>
+
+                <div class="shadow w-100 mx-auto text-center col-1 p-4" style="background-color: #1f2937; border-radius: 8px; color: white;">
+                    <p class="p-2 text-center" style="background-color: #374151; border-radius: 4px;">
+                        Vote Average: <b>@Model.Movie.VoteAverage</b>
+                    </p>
+                    <p class="p-2 text-center m-0" style="background-color: #374151; border-radius: 4px;">
+                        Vote Count: <b>@Model.Movie.VoteCount</b>
+                    </p>
+                </div>
+
+                <div class="shadow w-100 mx-auto text-center col-1 p-4" style="background-color: #1f2937; border-radius: 8px; color: white;">
+                    <p class="p-2 text-center" style="background-color: #374151; border-radius: 4px;">
+                        Budget: @if(Model.Movie.Budget == 0) { <b>Brak</b> } else { <b>$@Model.Movie.Budget</b> }
+                    </p>
+                    <p class="p-2 text-center" style="background-color: #374151; border-radius: 4px;">
+                        Revenue: <b>$@Model.Movie.Revenue</b>
+                    </p>
+                </div>
+
+                <div class="shadow w-100 mx-auto text-center col-1 p-4" style="background-color: #1f2937; border-radius: 8px; color: white;">
+                    <p class="p-2 text-center" style="background-color: #374151; border-radius: 4px;">
+                        Runtime: <b>@Model.Movie.Runtime minutes</b>
+                    </p>
+                    <p class="p-2 text-center" style="background-color: #374151; border-radius: 4px;">
+                        Popularity: <b>@Model.Movie.Popularity</b>
+                    </p>
+                    <p class="p-2 text-center m-0" style="background-color: #374151; border-radius: 4px;">
+                        Homepage: @if(Model.Movie.Homepage == null) { <b>Brak</b> } else { <a href="@Model.Movie.Homepage" target="_blank" style="color: #f9fafb;">website</a> }
+                    </p>
+                </div>
+            </div>
+
         </div>
     </div>
 </div>

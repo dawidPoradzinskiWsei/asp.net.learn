@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MoviesDP")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+969faceed9fd4fc0eb9c1a327df43e0cdbea3a4d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f12949578534f20683c542e60f55227defc8f665")]
 [assembly: System.Reflection.AssemblyProductAttribute("MoviesDP")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MoviesDP")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
