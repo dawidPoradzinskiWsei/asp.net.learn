@@ -9,9 +9,9 @@
                    asp-controller="@ViewBag.Controller"
                    asp-action="@ViewBag.Action"
                    asp-route-id="@ViewBag.MovieId"
-                   asp-route-page="@(Model.Page - 1)"
+                   asp-route-page="1"
                    asp-route-size="@Model.Size">
-                    &lt;
+                    &lt;&lt;
                 </a>
             </li>
             <li class="px-1 d-flex align-items-center justify-content-center ">
@@ -19,14 +19,14 @@
                    asp-controller="@ViewBag.Controller"
                    asp-action="@ViewBag.Action"
                    asp-route-id="@ViewBag.MovieId"
-                   asp-route-page="1"
+                   asp-route-page="@(Model.Page - 1)"
                    asp-route-size="@Model.Size">
-                    &lt;&lt;
+                    &lt;
                 </a>
             </li>
         }
 
-        @for (int j = Model.Page - 5; j <= Model.Page + 5; j++)
+        @for (int j = Model.Page - ViewBag.Next; j <= Model.Page + ViewBag.Next; j++)
         {
             if (j > 0 && j <= Model.TotalPages)
             {
@@ -75,5 +75,64 @@
                 </a>
             </li>
         }
+            <li class="px-1 d-flex align-items-center justify-content-center">
+
+            <select class="form-select" id="size" name="size" onchange="changePageSize(this)">
+
+            @{
+                bool used = false;
+
+                int maxSize = Model.TotalItems > 100 ? 100 : Model.TotalItems;
+                int halfSize = maxSize / 2;
+
+                if(Model.Size == 10)
+                {
+                    <option value="10" selected>10</option>
+                    used = true;
+                }
+                else
+                {
+                    <option value="10">10</option>
+                }
+
+                if(!used && Model.Size == halfSize)
+                {
+                    <option value="@halfSize" selected>@halfSize</option>
+                    used = true;
+                }
+                else
+                {
+                    <option value="@halfSize">@halfSize</option>
+                }
+
+                if(!used && Model.Size == maxSize)
+                {
+                    <option value="@maxSize" selected>@maxSize</option>
+                    used = true;
+                }
+                else
+                {
+                    <option value="@maxSize">@maxSize</option>
+                }
+
+                if(!used)
+                {
+                    <option value="@Model.Size" selected>@Model.Size</option>
+                }
+                
+            }
+
+
+            </select>            
+        </li>
     </ul>
 </nav>
+
+<script>
+    function changePageSize(select) {
+        var size = select.value;
+        var url = new URL(window.location.href);
+        url.searchParams.set('size', size);
+        window.location.href = url.toString();
+    }
+</script>

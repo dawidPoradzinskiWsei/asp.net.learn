@@ -13,4 +13,6 @@ public interface IMovieServices
     public PagingListAsync<Movie> GetMoviesByPages(int page, int size);
 
     public PagingListAsync<MovieCast> GetMovieCastsByPages(int page, int size, int movieId);
+
+    public void AddPerson(PersonEntity person);
 }

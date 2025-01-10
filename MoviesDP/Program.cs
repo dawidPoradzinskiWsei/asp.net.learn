@@ -1,10 +1,17 @@
+using Microsoft.EntityFrameworkCore;
 using MoviesDP.Models.Movies;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddDbContext<MoviesContext>();
+
+builder.Services.AddDbContext<MoviesContext>(options =>
+{
+    
+    options.UseSqlite(builder.Configuration.GetConnectionString("MoviesDatabase"));
+});
+
 builder.Services.AddTransient<IMovieServices, EFMovieService>();
 
 var app = builder.Build();

@@ -5,6 +5,7 @@
     ViewBag.MovieId = Model.Movie.MovieId;
     ViewBag.Controller = "Home";
     ViewBag.Action = "Details";
+    ViewBag.Next = 2;
 }
 
 <div class="container mx-auto">
@@ -24,7 +25,7 @@
         <div class="row w-100 mx-auto gap-3 py-3">
 
             <div class="d-flex flex-column gap-3 p-0 col-9">
-                <div class="shadow mx-auto text-center p-3" style="background-color: #1f2937; border-radius: 8px; color: white;">
+                <div class="shadow mx-auto text-center p-3 w-100" style="background-color: #1f2937; border-radius: 8px; color: white;">
                     <p class="p-2" style="background-color: #374151; border-radius: 4px;">
                         Tagline: @if(!string.IsNullOrEmpty(Model.Movie.Tagline)) { <b>@Model.Movie.Tagline</b> } else { <b>Brak</b> }
                     </p>

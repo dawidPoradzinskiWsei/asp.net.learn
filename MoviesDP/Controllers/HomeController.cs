@@ -7,12 +7,10 @@ namespace MoviesDP.Controllers;
 
 public class HomeController : Controller
 {
-    private readonly ILogger<HomeController> _logger;
     private readonly IMovieServices _movieServices;
 
-    public HomeController(ILogger<HomeController> logger, IMovieServices movieServices)
+    public HomeController(IMovieServices movieServices)
     {
-        _logger = logger;
         _movieServices = movieServices;
     }
 
@@ -29,7 +27,7 @@ public class HomeController : Controller
         return View(_movieServices.GetMoviesByPages(page, size));
     }
 
-    public IActionResult Details(int id, int page = 1, int size = 9)
+    public IActionResult Details(int id, int page = 1, int size = 8)
     {
         var movie = _movieServices.GetMovie(id);
 
@@ -37,7 +35,14 @@ public class HomeController : Controller
         {
             return NotFound();
         }
-
+        if(page < 1)
+        {
+            page = 1;
+        }
+        if(size < 1)
+        {
+            size = 20;
+        }
         var movieCasts = _movieServices.GetMovieCastsByPages(page, size, id);
         var model = new MovieAndCast
         {
@@ -48,14 +53,26 @@ public class HomeController : Controller
         return View(model);
     }
 
-    public IActionResult Privacy()
-    {   
-        return View();
-    }
-
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+    }
+    [HttpGet]
+    public IActionResult AddPerson(int id)
+    {
+        ViewData["MovieId"] = id;
+        ViewData["PersonId"] = 4;
+        return View();
+    }
+    [HttpPost]
+    public IActionResult AddPerson(int id, PersonEntity personEntity)
+    {
+        if(ModelState.IsValid)
+        {
+            _movieServices.AddPerson(personEntity);
+            return RedirectToAction(nameof(Details) , new { id = id });
+        }
+        return View(personEntity);
     }
 }
