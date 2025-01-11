@@ -8,7 +8,7 @@
     <div class="p-3 mx-auto text-center" style="background-color: #374151; border-radius: 8px;">
         <h2 class="m-0 p-2" style="background-color: #1f2937; border-radius: 8px;">Add new person</h2>
         <form asp-action="AddPerson" asp-controller="Home" method="POST" class="p-3 mt-2 d-flex flex-column gap-3 justify-content-center align-items-center" style="background-color: #1f2937; border-radius: 8px;">
-            <div asp-validation-summary="All"></div>
+            @* <div asp-validation-summary="All"></div> *@
             <input type="hidden" asp-for="MovieId" value="@ViewData["MovieId"]">
             <div class="p-3 w-50 d-flex flex-column align-items-center" style="background-color: #374151; border-radius: 8px;">
                 <label asp-for="CharacterName" class="pb-2"></label>
@@ -34,9 +34,9 @@
             <div class="p-3 w-50 d-flex flex-column align-items-center" style="background-color: #374151; border-radius: 8px;">
                 <label asp-for="CastOrder" class="pb-2"></label>
                 <input class="form-control" type="number" asp-for="CastOrder" style="width:50%">
-                     <div>
-                        <span asp-validation-for="CastOrder" class="text-danger"></span>
-                    </div>
+                <div>
+                    <span asp-validation-for="CastOrder" class="text-danger"></span>
+                </div>
             </div>
 
             <div class="p-3 w-50 d-flex flex-column align-items-center" style="background-color: #374151; border-radius: 8px;">
