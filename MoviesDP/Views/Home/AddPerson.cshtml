@@ -10,7 +10,6 @@
         <form asp-action="AddPerson" asp-controller="Home" method="POST" class="p-3 mt-2 d-flex flex-column gap-3 justify-content-center align-items-center" style="background-color: #1f2937; border-radius: 8px;">
             <div asp-validation-summary="All"></div>
             <input type="hidden" asp-for="MovieId" value="@ViewData["MovieId"]">
-            <input type="hidden" asp-for="PersonId" value="@ViewData["PersonId"]">
             <div class="p-3 w-50 d-flex flex-column align-items-center" style="background-color: #374151; border-radius: 8px;">
                 <label asp-for="CharacterName" class="pb-2"></label>
                 <input class="form-control" type="text" asp-for="CharacterName" style="width:50%">

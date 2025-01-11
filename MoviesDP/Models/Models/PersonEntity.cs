@@ -5,7 +5,6 @@ using MoviesDP.Models.Movies;
 public class PersonEntity
 {
     [HiddenInput]
-    [Key]
     public int PersonId { get; set; }
     [HiddenInput]
     public int MovieId { get; set; }

@@ -28,7 +28,6 @@ public class HomeController : Controller
         return View(_movieServices.GetMoviesByPages(page, size));
     }
 
-    [Authorize(Roles = "admin")]
     public IActionResult Details(int id, int page = 1, int size = 8)
     {
         var movie = _movieServices.GetMovie(id);
@@ -60,14 +59,17 @@ public class HomeController : Controller
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
+    
     [HttpGet]
+    [Authorize]
     public IActionResult AddPerson(int id)
     {
         ViewData["MovieId"] = id;
-        ViewData["PersonId"] = 4;
+        // ViewData["PersonId"] = 4;
         return View();
     }
     [HttpPost]
+    [Authorize]
     public IActionResult AddPerson(int id, PersonEntity personEntity)
     {
         if(ModelState.IsValid)

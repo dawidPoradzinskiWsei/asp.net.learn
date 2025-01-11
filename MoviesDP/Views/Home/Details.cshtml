@@ -1,4 +1,6 @@
+@using Microsoft.AspNetCore.Identity
 @model MovieAndCast
+@inject SignInManager<IdentityUser> SignInManager
 
 @{
     ViewData["Title"] = "Movie Details";
@@ -47,6 +49,8 @@
                             <div id="collapse_one" class="accordion-collapse collapse @(Model.MovieCasts.Page > 1 ? "show" : "")" data-bs-parent="#movie_cast_accordion">
                                 <div class="accordion-body px-3">
                                     <div class="row row-cols-3">
+                                        @if (SignInManager.IsSignedIn(User))
+                                        {
                                         <div class="col p-2">
                                             <a asp-controller="Home" asp-action="AddPerson" asp-route-id="@Model.Movie.MovieId" class="p-2 w-100 h-100 btn btn-success m-0 d-flex align-items-center justify-content-center" style="border-radius: 4px;">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48"
@@ -56,6 +60,15 @@
                                                 </svg>
                                             </a>
                                         </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="col p-2">
+                                                <a style="color: #e2e8f0;" id="login" asp-area="Identity" asp-page="/Account/Login" class="p-2 w-100 h-100 btn btn-danger m-0 d-flex align-items-center justify-content-center" style="border-radius: 4px;">
+                                                    Login to add new movie cast
+                                                </a>
+                                            </div>
+                                        }
 
                                         @await foreach (var cast in Model.MovieCasts.Data)
                                         {

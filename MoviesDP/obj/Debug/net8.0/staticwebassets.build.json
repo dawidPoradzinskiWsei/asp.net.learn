@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "VO4YMQh89SvdnLiwN6V7KCCSOCBjUMjhsnlmRiNHHC0=",
+  "Hash": "qLUcJ/fKA/jHVXNiDiyl0BOcimPScEPvT20INpIAXIA=",
   "Source": "MoviesDP",
   "BasePath": "_content/MoviesDP",
   "Mode": "Default",
@@ -1193,6 +1193,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Identity": "A:\\programowanie\\Studia\\ner\\MoviesDP\\wwwroot\\logindb\\logins.db",
+      "SourceId": "MoviesDP",
+      "SourceType": "Discovered",
+      "ContentRoot": "A:\\programowanie\\Studia\\ner\\MoviesDP\\wwwroot\\",
+      "BasePath": "_content/MoviesDP",
+      "RelativePath": "logindb/logins.db",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\logindb\\logins.db"
     },
     {
       "Identity": "C:\\Users\\Dawid\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\8.0.0\\staticwebassets\\V5\\css\\site.css",
