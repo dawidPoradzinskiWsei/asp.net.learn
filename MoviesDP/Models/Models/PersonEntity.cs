@@ -18,6 +18,6 @@ public class PersonEntity
     [Display(Name = "Gender")]
     public GenderEntity Gender{ get;set; }
     [Display(Name = "Cast order")]
-    [Range(1, int.MaxValue, ErrorMessage = "Cast order must be greater than 0")]
+    [Range(0, int.MaxValue, ErrorMessage = "Cast order must be not lower than 0")]
     public int? CastOrder { get; set; }
 }

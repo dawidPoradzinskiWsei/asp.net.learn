@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MoviesDP.Models;
 using MoviesDP.Models.Movies;
@@ -27,6 +28,7 @@ public class HomeController : Controller
         return View(_movieServices.GetMoviesByPages(page, size));
     }
 
+    [Authorize(Roles = "admin")]
     public IActionResult Details(int id, int page = 1, int size = 8)
     {
         var movie = _movieServices.GetMovie(id);
