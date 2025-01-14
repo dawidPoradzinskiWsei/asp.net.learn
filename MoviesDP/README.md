@@ -21,14 +21,15 @@ MoviesDP to aplikacja ASP.NET Core do zarządzania filmami i ich obsadą. Aplika
     ```sh
     dotnet restore
     ```
-3. Uruchumienie bez budowania
-   ```sh
-   dotnet watch
-   ```
-4. Uruchomienie z budowaniem
+3. Zbuduj program
    ```sh
    dotnet build
    ```
+4. Uruchom program
+   ```sh
+   dotnet watch
+   ```
+   albo
    ```sh
    cd bin\Debug\net8.0\
    ```
